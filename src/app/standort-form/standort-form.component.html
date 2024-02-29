@@ -1,0 +1,55 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #standortForm="ngForm">
+      <div class="form-group">
+        <label for="strasse">Straße</label>
+        <input type="text" [(ngModel)]="standort.strasse"
+               class="form-control"
+               id="strasse"
+               name="strasse"
+               placeholder="Straße eintragen"
+               required #strasse="ngModel">
+        <div [hidden]="!strasse.pristine" class="alert alert-danger">Straße fehlt!</div>
+      </div>
+
+      <div class="form-group">
+        <label for="hausnummer">hausnummer</label>
+        <input type="text" [(ngModel)]="standort.hausnummer"
+               class="form-control"
+               id="hausnummer"
+               name="hausnummer"
+               placeholder="hausnummer eintragen"
+               required #hausnummer="ngModel">
+        <div [hidden]="!hausnummer.pristine" class="alert alert-danger">hausnummer fehlt!</div>
+      </div>
+
+      <div class="form-group">
+        <label for="plz">PLZ</label>
+        <input type="text" [(ngModel)]="standort.plz"
+               class="form-control"
+               id="plz"
+               name="plz"
+               placeholder="PLZ eintragen"
+               required #plz="ngModel">
+        <div [hidden]="!plz.pristine" class="alert alert-danger">PLZ fehlt!</div>
+      </div>
+
+      <div class="form-group">
+        <label for="ort">Ort</label>
+        <input type="text" [(ngModel)]="standort.ort"
+               class="form-control"
+               id="ort"
+               name="ort"
+               placeholder="ort eintragen"
+               required #ort="ngModel">
+        <div [hidden]="!ort.pristine" class="alert alert-danger">ort fehlt!</div>
+      </div>
+
+
+      <button type="submit" [disabled]="!standortForm.form.valid"
+              class="btn btn-info">Hinzufügen
+      </button>
+    </form>
+  </div>
+</div>
+
