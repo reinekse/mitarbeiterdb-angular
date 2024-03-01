@@ -46,9 +46,18 @@
       </div>
 
 
-      <button type="submit" [disabled]="!standortForm.form.valid"
-              class="btn btn-info">Hinzufügen
-      </button>
+      <ul class="text-center list-inline py-3">
+        <li class="list-inline-item">
+          <button type="submit" [disabled]="!standortForm.form.valid"
+                  class="btn btn-info">Hinzufügen
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button type="button"
+                  class="btn btn-danger" (click)="gotoStandortIndex()">Abbrechen
+          </button>
+        </li>
+      </ul>
     </form>
   </div>
 </div>

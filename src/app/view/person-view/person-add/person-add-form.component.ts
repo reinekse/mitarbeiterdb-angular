@@ -9,10 +9,10 @@ import {PersonService} from "../../../service/person-service.service";
   selector: 'app-person-add',
   standalone: true,
   imports: [FormsModule, CommonModule, RouterModule],
-  templateUrl: './person-add.component.html',
-  styleUrl: './person-add.component.css'
+  templateUrl: './person-add-form.component.html',
+  styleUrl: './person-add-form.component.css'
 })
-export class PersonAddComponent {
+export class PersonAddFormComponent {
 
   person: Person;
 
@@ -23,10 +23,11 @@ export class PersonAddComponent {
   }
 
   onSubmit() {
-    this.personService.save(this.person).subscribe(result => this.gotoPersonList());
+    this.personService.save(this.person).subscribe(result => this.gotoPersonIndex());
   }
 
-  gotoPersonList() {
-    this.router.navigate(['/person/all']);
+
+  gotoPersonIndex() {
+    this.router.navigate(['/person/index']);
   }
 }

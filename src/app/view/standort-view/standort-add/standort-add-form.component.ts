@@ -9,10 +9,10 @@ import {StandortService} from "../../../service/standort-service.service";
   selector: 'app-standort-add',
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './standort-add.component.html',
-  styleUrl: './standort-add.component.css'
+  templateUrl: './standort-add-form.component.html',
+  styleUrl: './standort-add-form.component.css'
 })
-export class StandortAddComponent {
+export class StandortAddFormComponent {
   standort: Standort;
 
   constructor(
@@ -22,10 +22,10 @@ export class StandortAddComponent {
   }
 
   onSubmit() {
-    this.standortService.save(this.standort).subscribe(result => this.gotoStandortList());
+    this.standortService.save(this.standort).subscribe(result => this.gotoStandortIndex());
   }
 
-  gotoStandortList() {
-    this.router.navigate(['/standort/all']);
+  gotoStandortIndex() {
+    this.router.navigate(['/standort/index']);
   }
 }

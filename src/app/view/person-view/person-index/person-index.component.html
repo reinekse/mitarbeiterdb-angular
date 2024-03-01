@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12 text-right mb-3">
+    <a href="#" [routerLink]="['/person/add-form']" class="btn btn-secondary">Person hinzufügen</a>
+  </div>
+</div>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nachname</th>
+    <th scope="col">Vorname</th>
+    <th scope="col">Geburtstag</th>
+    <th scope="col">Abteilung</th>
+    <th scope="col">Standort-ID</th>
+    <th scope="col">Anstellungstag</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let person of personen">
+    <td>{{ person.id }}</td>
+    <td>{{ person.nachname }}</td>
+    <td>{{ person.vorname }}</td>
+    <td>{{ person.geburtstag }}</td>
+    <td>{{ person.abteilung }}</td>
+    <td>{{ person.standortId }}</td>
+    <td>{{ person.anstellungstag }}</td>
+  </tr>
+  </tbody>
+</table>
+

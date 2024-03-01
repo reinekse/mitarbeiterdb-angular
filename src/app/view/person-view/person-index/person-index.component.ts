@@ -8,10 +8,10 @@ import {RouterModule} from "@angular/router";
   selector: 'app-person-list',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './person-list.component.html',
-  styleUrl: './person-list.component.css'
+  templateUrl: './person-index.component.html',
+  styleUrl: './person-index.component.css'
 })
-export class PersonListComponent implements OnInit {
+export class PersonIndexComponent implements OnInit {
 
   personen: Person[] = [];
 

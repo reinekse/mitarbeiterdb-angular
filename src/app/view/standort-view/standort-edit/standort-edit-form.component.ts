@@ -7,10 +7,10 @@ import {StandortService} from "../../../service/standort-service.service";
   selector: 'app-standort-edit',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './standort-edit.component.html',
-  styleUrl: './standort-edit.component.css'
+  templateUrl: './standort-edit-form.component.html',
+  styleUrl: './standort-edit-form.component.css'
 })
-export class StandortEditComponent {
+export class StandortEditFormComponent {
   constructor(private standortService: StandortService) {
   }
 }

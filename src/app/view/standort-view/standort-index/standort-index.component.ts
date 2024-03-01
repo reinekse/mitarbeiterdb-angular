@@ -8,10 +8,10 @@ import {RouterModule} from "@angular/router";
   selector: 'app-standort-list',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './standort-list.component.html',
-  styleUrl: './standort-list.component.css'
+  templateUrl: './standort-index.component.html',
+  styleUrl: './standort-index.component.css'
 })
-export class StandortListComponent implements OnInit {
+export class StandortIndexComponent implements OnInit {
 
   standorte: Standort[] = [];
 
