@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Person} from "../model/person";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class PersonService {
 
   private baseUrl: string;

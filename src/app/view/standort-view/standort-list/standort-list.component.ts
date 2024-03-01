@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Standort} from "../model/standort";
-import {StandortService} from "../service/standort-service.service";
+import {Standort} from "../../../model/standort";
+import {StandortService} from "../../../service/standort-service.service";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
@@ -13,7 +13,7 @@ import {RouterModule} from "@angular/router";
 })
 export class StandortListComponent implements OnInit {
 
-  standorte?: Standort[];
+  standorte: Standort[] = [];
 
   constructor(private standortService: StandortService) {
   }

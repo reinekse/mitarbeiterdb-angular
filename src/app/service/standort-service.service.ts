@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Standort} from "../model/standort";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class StandortService {
   private baseUrl: string;
 

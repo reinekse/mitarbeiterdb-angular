@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Person} from "../model/person";
-import {PersonService} from "../service/person-service.service";
-import {CommonModule} from '@angular/common';
-
-import {RouterModule} from '@angular/router';
+import {Person} from "../../../model/person";
+import {PersonService} from "../../../service/person-service.service";
+import {CommonModule} from "@angular/common";
+import {RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-person-list',
@@ -24,5 +23,4 @@ export class PersonListComponent implements OnInit {
       this.personen = data;
     });
   }
-
 }

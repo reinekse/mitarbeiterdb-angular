@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StandortFormComponent } from './standort-form.component';
+import { StandortEditComponent } from './standort-edit.component';
 
-describe('StandortFormComponent', () => {
-  let component: StandortFormComponent;
-  let fixture: ComponentFixture<StandortFormComponent>;
+describe('StandortEditComponent', () => {
+  let component: StandortEditComponent;
+  let fixture: ComponentFixture<StandortEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StandortFormComponent]
+      imports: [StandortEditComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(StandortFormComponent);
+    fixture = TestBed.createComponent(StandortEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
