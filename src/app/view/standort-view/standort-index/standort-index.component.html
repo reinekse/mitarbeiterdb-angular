@@ -2,6 +2,9 @@
   <div class="col-12 text-right mb-3">
     <a href="#" [routerLink]="['/standort/add-form']" class="btn btn-secondary">Standort hinzufügen</a>
   </div>
+  <button type="button"
+          class="btn btn-danger" (click)="test()">Test
+  </button>
 </div>
 
 <table class="table table-bordered table-striped">
@@ -18,9 +21,9 @@
   <tr *ngFor="let standort of standorte">
     <td>{{ standort.id }}</td>
     <td>{{ standort.strasse }}</td>
-    <td><{{ standort.hausnummer }}</td>
-    <td><{{ standort.plz }}</td>
-    <td><{{ standort.ort }}</td>
+    <td>{{ standort.hausnummer }}</td>
+    <td>{{ standort.plz }}</td>
+    <td>{{ standort.ort }}</td>
   </tr>
   </tbody>
 </table>

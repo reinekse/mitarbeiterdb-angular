@@ -21,6 +21,15 @@ export class StandortIndexComponent implements OnInit {
   ngOnInit() {
     this.standortService.findAll().subscribe(data => {
       this.standorte = data;
+
     });
   }
+
+  test() {
+    console.log("test");
+    this.standorte.forEach(standort => {
+      console.log(standort.ort);
+    });
+  }
+
 }
