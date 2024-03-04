@@ -10,7 +10,8 @@
                placeholder="Mustermensch"
                required #nachname="ngModel">
       </div>
-      <div [hidden]="!nachname.pristine" class="alert alert-danger">Nachname fehlt</div>
+      <div [hidden]="!nachname.pristine" class="alert alert-danger">Nachname ist obligatorisch</div>
+
 
       <div class="form-group">
         <label for="vorname">Vorname</label>
@@ -21,7 +22,8 @@
                placeholder="Maxi"
                required #vorname="ngModel">
       </div>
-      <div [hidden]="!vorname.pristine" class="alert alert-danger">Vorname fehlt</div>
+      <div [hidden]="!vorname.pristine" class="alert alert-danger">Vorname ist obligatorisch</div>
+
 
       <div class="form-group">
         <label for="geburtstag">Geburtstag</label>
@@ -40,19 +42,22 @@
                class="form-control"
                id="abteilung"
                name="abteilung"
-               placeholder="AX"
+               placeholder="M1"
         >
       </div>
 
 
       <div class="form-group">
         <label for="standortId">Standort-ID</label>
-        <input type="text" [(ngModel)]="person.standortId"
-               class="form-control"
-               id="standortId"
-               name="standortId"
-               placeholder="X">
+        <select [(ngModel)]="person.standortId"
+                class="form-control"
+                id="standortId"
+                name="standortId"
+                required #standortId="ngModel">
+          <option *ngFor="let id of standortIds" [value]="id">{{ id }}</option>
+        </select>
       </div>
+      <div [hidden]="!standortId.pristine" class="alert alert-danger">Standort-ID ist obligatorisch</div>
 
 
       <div class="form-group">
