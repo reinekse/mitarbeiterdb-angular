@@ -24,6 +24,14 @@
     <td>{{ standort.hausnummer }}</td>
     <td>{{ standort.plz }}</td>
     <td>{{ standort.ort }}</td>
+    <td>
+
+      <a href="#" [routerLink]="['/standort/', standort.id, 'edit-form']" class="btn btn-primary">Bearbeiten</a>
+
+      <button type="button" (click)="deleteStandort(standort.id)" class="btn btn-danger" [disabled]=false>Löschen
+      </button>
+
+    </td>
   </tr>
   </tbody>
 </table>

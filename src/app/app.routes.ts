@@ -11,12 +11,12 @@ export const routes: Routes = [
   {path: 'standort', redirectTo: 'standort/index', pathMatch: 'full'},
   {path: 'standort/index', component: StandortIndexComponent},
   {path: 'standort/add-form', component: StandortAddFormComponent},
-  {path: 'standort/edit-form', component: StandortEditFormComponent},
+  {path: 'standort/:standortId/edit-form', component: StandortEditFormComponent},
   // Person
   {path: 'person', redirectTo: 'person/index', pathMatch: 'full'},
   {path: 'person/index', component: PersonIndexComponent},
   {path: 'person/add-form', component: PersonAddFormComponent},
-  {path: 'person/edit-form', component: PersonEditFormComponent},
+  {path: 'person/:personId/edit-form', component: PersonEditFormComponent},
 
 
 ];

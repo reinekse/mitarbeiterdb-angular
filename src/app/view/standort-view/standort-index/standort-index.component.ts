@@ -25,6 +25,7 @@ export class StandortIndexComponent implements OnInit {
     });
   }
 
+
   test() {
     console.log("test");
     this.standorte.forEach(standort => {
@@ -32,4 +33,13 @@ export class StandortIndexComponent implements OnInit {
     });
   }
 
+  deleteStandort(id: string) {
+    this.standortService.delete(id).subscribe(res => {
+
+      this.standorte = this.standorte.filter(standort => standort.id !== id);
+
+      console.log(`Standort ${id} wurde erfolgreich gelöscht`);
+
+    });
+  }
 }

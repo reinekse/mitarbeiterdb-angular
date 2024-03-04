@@ -18,4 +18,8 @@ export class StandortService {
   public save(standort: Standort) {
     return this.http.post<Standort>(`${this.baseUrl}/add`, standort);
   }
+
+  delete(id: string) {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
+  }
 }

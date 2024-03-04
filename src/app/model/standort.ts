@@ -1,5 +1,5 @@
 export class Standort {
-  id?: string; // TODO: number?
+  id!: string;
   strasse?: string;
   hausnummer?: string;
   plz?: string;

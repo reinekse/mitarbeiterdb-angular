@@ -27,6 +27,13 @@
     <td>{{ person.abteilung }}</td>
     <td>{{ person.standortId }}</td>
     <td>{{ person.anstellungstag | date: 'dd.MM.yyyy' }}</td>
+    <td>
+
+      <a href="#" [routerLink]="['/person/', person.id, 'edit-form']" class="btn btn-primary">Bearbeiten</a>
+
+      <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">Löschen</button>
+
+    </td>
   </tr>
   </tbody>
 </table>

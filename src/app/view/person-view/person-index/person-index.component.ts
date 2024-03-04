@@ -28,7 +28,17 @@ export class PersonIndexComponent implements OnInit {
   test() {
     console.log("test");
     this.personen.forEach(person => {
-      console.log(person.id); // TODO: id is undefined
+      console.log(person.id);
+    });
+  }
+
+  deletePerson(id: number) {
+    this.personService.delete(id).subscribe(res => {
+
+      this.personen = this.personen.filter(person => person.id !== id);
+
+      console.log(`Person ${id} wurde erfolgreich gelöscht`);
+
     });
   }
 }

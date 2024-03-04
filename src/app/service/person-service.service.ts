@@ -16,7 +16,12 @@ export class PersonService {
     return this.http.get<Person[]>(`${this.baseUrl}/all`);
   }
 
-  public save(person: Person) {
+  public save(person: Person): Observable<Person> {
     return this.http.post<Person>(`${this.baseUrl}/add`, person);
   }
+
+  public delete(id: number) {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
+  }
+
 }
