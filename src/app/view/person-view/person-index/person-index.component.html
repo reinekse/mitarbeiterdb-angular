@@ -23,10 +23,10 @@
     <td>{{ person.id }}</td>
     <td>{{ person.nachname }}</td>
     <td>{{ person.vorname }}</td>
-    <td>{{ person.geburtstag | date: 'dd.MM.yyyy' }}</td>
+    <td>{{ person.geburtstag | date: 'MM / dd / yyyy' }}</td>
     <td>{{ person.abteilung }}</td>
     <td>{{ person.standortId }}</td>
-    <td>{{ person.anstellungstag | date: 'dd.MM.yyyy' }}</td>
+    <td>{{ person.anstellungstag | date: 'MM / dd / yyyy' }}</td>
     <td>
 
       <a href="#" [routerLink]="['/person/', person.id, 'edit-form']" class="btn btn-primary">Bearbeiten</a>

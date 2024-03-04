@@ -5,6 +5,7 @@ import {Router, RouterModule} from "@angular/router";
 import {Person} from "../../../model/person";
 import {PersonService} from "../../../service/person-service.service";
 
+
 @Component({
   selector: 'app-person-add',
   standalone: true,
