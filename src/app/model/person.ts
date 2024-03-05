@@ -1,9 +1,9 @@
 export class Person {
-  id!: number;
+  id!: string;
   nachname?: string;
   vorname?: string;
   geburtstag?: Date;
   abteilung?: string;
-  standortId?: number;
+  standortId?: string;
   anstellungstag?: Date;
 }

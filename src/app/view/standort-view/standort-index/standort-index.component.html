@@ -1,10 +1,11 @@
 <div class="row">
   <div class="col-12 text-right mb-3">
-    <a href="#" [routerLink]="['/standort/add-form']" class="btn btn-secondary">Standort hinzufügen</a>
+    <a href="#" [routerLink]="['/standort/add-form']"
+       class="btn btn-primary">
+      Standort hinzufügen
+      <i class="bi bi-add"></i>
+    </a>
   </div>
-  <button type="button"
-          class="btn btn-danger" (click)="test()">Test
-  </button>
 </div>
 
 <table class="table table-bordered table-striped">
@@ -15,6 +16,7 @@
     <th scope="col">Hausnummer</th>
     <th scope="col">PLZ</th>
     <th scope="col">Ort</th>
+
   </tr>
   </thead>
   <tbody>
@@ -24,12 +26,17 @@
     <td>{{ standort.hausnummer }}</td>
     <td>{{ standort.plz }}</td>
     <td>{{ standort.ort }}</td>
-    <td>
+    <td style="text-align: center;">
 
-      <a href="#" [routerLink]="['/standort/', standort.id, 'edit-form']" class="btn btn-primary">Bearbeiten</a>
+      <a href="#" [routerLink]="['/standort/', standort.id, 'edit-form']" class="btn btn-secondary">
+        <i class="bi bi-pencil"></i>
+      </a>
 
-      <button type="button" (click)="deleteStandort(standort.id)" class="btn btn-danger" [disabled]=false>Löschen
+
+      <button type="button" (click)="deleteStandort(standort.id)" class="btn btn-danger">
+        <i class="bi bi-trash"></i>
       </button>
+
 
     </td>
   </tr>

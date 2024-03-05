@@ -25,14 +25,7 @@ export class PersonIndexComponent implements OnInit {
     });
   }
 
-  test() {
-    console.log("test");
-    this.personen.forEach(person => {
-      console.log(person.id);
-    });
-  }
-
-  deletePerson(id: number) {
+  deletePerson(id: string) {
     this.personService.delete(id).subscribe(res => {
 
       this.personen = this.personen.filter(person => person.id !== id);

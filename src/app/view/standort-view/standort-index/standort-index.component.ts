@@ -4,6 +4,7 @@ import {StandortService} from "../../../service/standort-service.service";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
+
 @Component({
   selector: 'app-standort-list',
   standalone: true,
@@ -25,21 +26,9 @@ export class StandortIndexComponent implements OnInit {
     });
   }
 
-
-  test() {
-    console.log("test");
-    this.standorte.forEach(standort => {
-      console.log(standort.ort);
-    });
-  }
-
   deleteStandort(id: string) {
     this.standortService.delete(id).subscribe(res => {
-
       this.standorte = this.standorte.filter(standort => standort.id !== id);
-
-      console.log(`Standort ${id} wurde erfolgreich gelöscht`);
-
     });
   }
 }

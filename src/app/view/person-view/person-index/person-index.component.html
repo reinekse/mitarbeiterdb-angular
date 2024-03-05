@@ -1,10 +1,9 @@
 <div class="row">
-  <div class="col-12 text-right mb-3">
-    <a href="#" [routerLink]="['/person/add-form']" class="btn btn-secondary">Person hinzufügen</a>
+  <div class="col-12 text-right mb-1">
+    <a href="#" [routerLink]="['/person/add-form']" class="btn btn-primary">
+      Person hinzufügen
+    </a>
   </div>
-  <button type="button"
-          class="btn btn-danger" (click)="test()">Test
-  </button>
 </div>
 <table class="table table-bordered table-striped">
   <thead class="thead-dark">
@@ -27,12 +26,13 @@
     <td>{{ person.abteilung }}</td>
     <td>{{ person.standortId }}</td>
     <td>{{ person.anstellungstag | date: 'MM / dd / yyyy' }}</td>
-    <td>
-
-      <a href="#" [routerLink]="['/person/', person.id, 'edit-form']" class="btn btn-primary">Bearbeiten</a>
-
-      <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">Löschen</button>
-
+    <td style="text-align: center;">
+      <a href="#" [routerLink]="['/person/', person.id, 'edit-form']" class="btn btn-secondary">
+        <i class="bi bi-pencil"></i>
+      </a>
+      <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">
+        <i class="bi bi-trash"></i>
+      </button>
     </td>
   </tr>
   </tbody>

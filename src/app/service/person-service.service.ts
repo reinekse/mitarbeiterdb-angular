@@ -20,7 +20,7 @@ export class PersonService {
     return this.http.post<Person>(`${this.baseUrl}/add`, person);
   }
 
-  public delete(id: number) {
+  public delete(id: string) {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 
