@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Standort} from "../model/standort";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class StandortService {
   private baseUrl: string;
 
@@ -17,5 +17,9 @@ export class StandortService {
 
   public save(standort: Standort) {
     return this.http.post<Standort>(`${this.baseUrl}/add`, standort);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 }

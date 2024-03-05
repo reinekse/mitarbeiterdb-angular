@@ -7,20 +7,18 @@
                class="form-control"
                id="strasse"
                name="strasse"
-               placeholder="Straße eintragen"
-               required #strasse="ngModel">
-        <div [hidden]="!strasse.pristine" class="alert alert-danger">Straße fehlt!</div>
+               placeholder="Musterweg"
+        >
       </div>
 
       <div class="form-group">
-        <label for="hausnummer">hausnummer</label>
+        <label for="hausnummer">Hausnummer</label>
         <input type="text" [(ngModel)]="standort.hausnummer"
                class="form-control"
                id="hausnummer"
                name="hausnummer"
-               placeholder="hausnummer eintragen"
-               required #hausnummer="ngModel">
-        <div [hidden]="!hausnummer.pristine" class="alert alert-danger">hausnummer fehlt!</div>
+               placeholder="42a"
+        >
       </div>
 
       <div class="form-group">
@@ -29,9 +27,8 @@
                class="form-control"
                id="plz"
                name="plz"
-               placeholder="PLZ eintragen"
-               required #plz="ngModel">
-        <div [hidden]="!plz.pristine" class="alert alert-danger">PLZ fehlt!</div>
+               placeholder="54321"
+        >
       </div>
 
       <div class="form-group">
@@ -40,16 +37,26 @@
                class="form-control"
                id="ort"
                name="ort"
-               placeholder="ort eintragen"
+               placeholder="Musterort"
                required #ort="ngModel">
-        <div [hidden]="!ort.pristine" class="alert alert-danger">ort fehlt!</div>
       </div>
+      <div [hidden]="!ort.pristine" class="alert alert-danger">Ort ist obligatorisch!</div>
 
 
-      <button type="submit" [disabled]="!standortForm.form.valid"
-              class="btn btn-info">Hinzufügen
-      </button>
+      <ul class="text-center list-inline py-3">
+        <li class="list-inline-item">
+          <button type="submit" [disabled]="!standortForm.form.valid"
+                  class="btn btn-success">Hinzufügen
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button type="button"
+                  class="btn btn-danger" (click)="gotoStandortIndex()">Abbrechen
+          </button>
+        </li>
+      </ul>
     </form>
   </div>
 </div>
+
 

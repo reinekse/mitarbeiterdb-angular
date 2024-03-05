@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-12 text-right mb-1">
+    <a href="#" [routerLink]="['/person/add-form']" class="btn btn-primary">
+      Person hinzufügen
+    </a>
+  </div>
+</div>
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Nachname</th>
+    <th scope="col">Vorname</th>
+    <th scope="col">Geburtstag</th>
+    <th scope="col">Abteilung</th>
+    <th scope="col">Standort-ID</th>
+    <th scope="col">Anstellungstag</th>
+    <th scope="col" style="background-color: rgb(90,100,100); text-align: center;">Aktion</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let person of personen">
+    <td>{{ person.id }}</td>
+    <td>{{ person.nachname }}</td>
+    <td>{{ person.vorname }}</td>
+    <td>{{ person.geburtstag | date: 'MM / dd / yyyy' }}</td>
+    <td>{{ person.abteilung }}</td>
+    <td>{{ person.standortId }}</td>
+    <td>{{ person.anstellungstag | date: 'MM / dd / yyyy' }}</td>
+    <td style="text-align: center;">
+      <a href="#" [routerLink]="['/person/', person.id, 'edit-form']" class="btn btn-secondary">
+        <i class="bi bi-pencil"></i>
+      </a>
+      <button type="button" (click)="deletePerson(person.id)" class="btn btn-danger">
+        <i class="bi bi-trash"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
