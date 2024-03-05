@@ -30,8 +30,6 @@ export class PersonIndexComponent implements OnInit {
 
       this.personen = this.personen.filter(person => person.id !== id);
 
-      console.log(`Person ${id} wurde erfolgreich gelöscht`);
-
     });
   }
 }

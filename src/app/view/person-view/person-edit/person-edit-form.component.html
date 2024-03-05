@@ -1,1 +1,90 @@
-<p>person-edit works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #personForm="ngForm">
+      <div class="form-group">
+        <label for="nachname">Nachname</label>
+        <input type="text" [(ngModel)]="person.nachname"
+               class="form-control"
+               id="nachname"
+               name="nachname"
+               placeholder="Mustermensch"
+               required #nachname="ngModel">
+      </div>
+      <div [hidden]="!nachname.pristine" class="alert alert-danger">Nachname ist obligatorisch</div>
+
+
+      <div class="form-group">
+        <label for="vorname">Vorname</label>
+        <input type="text" [(ngModel)]="person.vorname"
+               class="form-control"
+               id="vorname"
+               name="vorname"
+               placeholder="Maxi"
+               required #vorname="ngModel">
+      </div>
+      <div [hidden]="!vorname.pristine" class="alert alert-danger">Vorname ist obligatorisch</div>
+
+
+      <div class="form-group">
+        <label for="geburtstag">Geburtstag</label>
+        <input type="date" [(ngModel)]="person.geburtstag"
+               class="form-control"
+               id="geburtstag"
+               name="geburtstag"
+        >
+      </div>
+
+
+      <div class="form-group">
+        <label for="abteilung">Abteilung</label>
+        <input type="text" [(ngModel)]="person.abteilung"
+               class="form-control"
+               id="abteilung"
+               name="abteilung"
+               placeholder="M1"
+        >
+      </div>
+
+
+      <div class="form-group">
+        <label for="standortId">Standort-ID</label>
+        <select [(ngModel)]="person.standortId"
+                class="form-control"
+                id="standortId"
+                name="standortId"
+                required #standortId="ngModel">
+          <option *ngFor="let id of standortIds" [value]="id">{{ id }}</option>
+        </select>
+      </div>
+      <div [hidden]="!standortId.pristine" class="alert alert-danger">Standort-ID ist obligatorisch</div>
+
+
+      <div class="form-group">
+        <label for="anstellungstag">Anstellungstag</label>
+        <input type="date" [(ngModel)]="person.anstellungstag"
+               class="form-control"
+               id="anstellungstag"
+               name="anstellungstag"
+        >
+      </div>
+
+
+      <ul class="text-center list-inline py-3">
+        <li class="list-inline-item">
+          <button type="submit" [disabled]="!personForm.form.valid"
+                  class="btn btn-success">Änderungen speichern
+          </button>
+        </li>
+        <li class="list-inline-item">
+          <button type="button"
+                  class="btn btn-danger" (click)="gotoPersonIndex()">Abbrechen
+          </button>
+        </li>
+      </ul>
+
+    </form>
+  </div>
+</div>
+
+
+

@@ -24,4 +24,8 @@ export class PersonService {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 
+  public find(id: string) {
+    return this.http.get<Person>(`${this.baseUrl}/find/${id}`);
+  }
+
 }
