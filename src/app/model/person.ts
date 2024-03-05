@@ -2,8 +2,10 @@ export class Person {
   id!: string;
   nachname?: string;
   vorname?: string;
-  geburtstag?: Date;
+  geburtstag?: string;
   abteilung?: string;
   standortId?: string;
-  anstellungstag?: Date;
+  anstellungstag?: string;
 }
+
+

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NgForOf} from "@angular/common";
 import {Person} from "../../../model/person";
 import {StandortService} from "../../../service/standort-service.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -12,7 +11,6 @@ import {PersonService} from "../../../service/person-service.service";
   standalone: true,
   imports: [
     FormsModule,
-    NgForOf,
     ReactiveFormsModule
   ],
   templateUrl: './person-edit-form.component.html',
@@ -33,9 +31,13 @@ export class PersonEditFormComponent implements OnInit {
     const id = this.route.snapshot.params['personId'];
     this.personService.find(id).subscribe(data => {
         this.person = data;
+        // extract yyyy-mm-dd
+        this.person.geburtstag = this.person.geburtstag!.substring(0, 10);
+        this.person.anstellungstag = this.person.anstellungstag!.substring(0, 10);
+
       }
     )
-    console.log(this.person.geburtstag);
+
     this.standortService.findAll().subscribe(standorte => {
       standorte.forEach(standort => {
         this.standortIds.push(standort.id);
@@ -53,6 +55,8 @@ export class PersonEditFormComponent implements OnInit {
   gotoPersonIndex() {
     this.router.navigate(['/person/index']);
   }
+
+  protected readonly Date = Date;
 }
 
 
